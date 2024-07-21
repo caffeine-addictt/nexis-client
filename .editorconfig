@@ -12,11 +12,13 @@ indent_size = 2
 indent_style = space
 quote_type = single
 
-# Programming languages
-[*.{py,js,ts,jsx,tsx}]
-charset = utf-8
+# Makefile
+[Makefile]
+indent_size = 4
+indent_style = tab
 
 # Python
 [*.py]
 indent_style = space
 indent_size = 4
+charset = utf-8
