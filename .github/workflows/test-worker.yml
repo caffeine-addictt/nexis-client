@@ -1,13 +1,17 @@
-name: Run Tests
+name: Run Test Suite
 
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 defaults:
   run:
     shell: bash
+
+env:
+  PIP_DISABLE_PIP_VERSION_CHECK: 1
+  COVERAGE_IGOR_VERBOSE: 1
+  FORCE_COLOR: 1 # pytest output color
 
 permissions:
   contents: read
@@ -16,9 +20,11 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  tests:
-    name: 'Node.Js ${{ matrix.node_version }} on ${{ matrix.os }}'
+  test-python:
+    name: '${{ matrix.python-version }} on ${{ matrix.os }}'
     runs-on: '${{ matrix.os }}-latest'
+
+    continue-on-error: ${{ startsWith(matrix.python-version, '~') }} # Allows unstable Python versions to fail
 
     strategy:
       fail-fast: false
@@ -27,38 +33,33 @@ jobs:
           - ubuntu
           - windows
           - macos
-
-        node_version:
-          - 16
-          - 18
-          - 20
-          - latest
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.x']
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v4.0.3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
         with:
-          cache: npm
-          node-version: ${{ matrix.node_version }}
+          python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
         run: |
           set -xe
-          npm i
+          python -m pip install poetry coverage pytest
+          python -m poetry install
 
-      - name: Testing
+      - name: Test with pytest
         run: |
           set -xe
-          npm run test
+          python -m poetry run pytest -sv
 
   check:
     if: always()
     name: Tests Successful
     runs-on: ubuntu-latest
-    needs: [tests]
+    needs: [test-python]
 
     steps:
       - name: Whether the whole test suite passed
