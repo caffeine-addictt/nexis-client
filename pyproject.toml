@@ -27,11 +27,11 @@ classifiers = [
 ]
 
 [tool.poetry.urls]
-Homepage = "https://github.com/caffeine-addictt/nexis"
-Documentation = "https://github.com/caffeine-addictt/nexis/blob/main/README.md"
-Source = "https://github.com/caffeine-addictt/nexis"
-"Release Notes" = "https://github.com/caffeine-addictt/nexis/releases"
-"Bug Tracker" = "https://github.com/caffeine-addictt/nexis/issues"
+Homepage = "https://github.com/caffeine-addictt/nexis-client"
+Documentation = "https://github.com/caffeine-addictt/nexis-client/blob/main/README.md"
+Source = "https://github.com/caffeine-addictt/nexis-client"
+"Release Notes" = "https://github.com/caffeine-addictt/nexis-client/releases"
+"Bug Tracker" = "https://github.com/caffeine-addictt/nexis-client/issues"
 
 [tool.poetry.scripts]
 nexis = "nexis.entrypoint:main"
