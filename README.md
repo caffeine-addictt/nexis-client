@@ -9,6 +9,8 @@
 <!-- PROJECT SHIELDS -->
 <div align="center">
 
+<a href="[pypi-url]">[![PYPI - Version][version-shield]][pypi-url]</a>
+<a href="[pypi-url]">[![PYPI - Downloads][downloads-shield]][pypi-url]</a>
 <a href="[forks-url]">[![Forks][forks-shield]][forks-url]</a>
 <a href="[stars-url]">[![Stargazers][stars-shield]][stars-url]</a>
 <a href="[license-url]">[![GPL3.0 License][license-shield]][license-url]</a>
@@ -133,6 +135,9 @@ Jun Xiang - [contact@ngjx.org](mailto:contact@ngjx.org)
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
+[version-shield]: https://img.shields.io/pypi/v/nexis.svg?style=for-the-badge&color=efd0cd
+[downloads-shield]: https://img.shields.io/pypi/dm/nexis.svg?style=for-the-badge
+[pypi-url]: https://pypi.org/project/nexis/
 [forks-shield]: https://img.shields.io/github/forks/caffeine-addictt/nexis-client.svg?style=for-the-badge
 [forks-url]: https://github.com/caffeine-addictt/nexis-client/network/members
 [stars-shield]: https://img.shields.io/github/stars/caffeine-addictt/nexis-client.svg?style=for-the-badge&color=yellow
