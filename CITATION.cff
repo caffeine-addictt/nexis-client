@@ -1,4 +1,4 @@
-abstract: GitHub template repository
+abstract: Nexis Client
 authors:
   - alias: Alex
     family-names: Ng
@@ -6,17 +6,22 @@ authors:
     orcid: https://orcid.org/0009-0001-1641-9397
 identifiers:
   - type: url
-    value: https://github.com/caffeine-addictt/template/releases/tag/v1.13.2
-    description: The GitHub release URL of tag v1.13.2.
+    value: https://github.com/caffeine-addictt/nexis-client/releases/tag/v0.1.0
+    description: The GitHub release URL of tag v0.1.0.
 cff-version: 1.2.0
-date-released: 2024-05-12
+date-released: yyyy-mm-dd
 keywords:
-  - template
-  - bash
-  - github
-license: MIT
+  - python
+  - python3
+  - python-nexis
+  - nexis
+  - nexis-client
+  - nyp
+  - nanyang-polytechnic
+  - infosec
+license: GPL-3.0-only
 message: If you use this software, please cite it using these metadata.
-repository-code: https://github.com/caffeine-addictt/template
-title: template
+repository-code: https://github.com/caffeine-addictt/nexis-client
+title: Nexis Client
 type: software
-version: 1.13.2
+version: 0.1.0
